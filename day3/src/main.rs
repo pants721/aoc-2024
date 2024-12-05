@@ -1,10 +1,8 @@
-use std::fs;
-
 use anyhow::Result;
 use itertools::Itertools;
 
 fn part1() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let mut chars = input.chars();
 
     let mut sum = 0;
@@ -63,7 +61,7 @@ fn part1() -> Result<()> {
 }
 
 fn part2() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let mut chars = input.chars();
 
     let mut sum = 0;

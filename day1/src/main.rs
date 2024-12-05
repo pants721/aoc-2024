@@ -1,9 +1,9 @@
-use std::{collections::HashMap, fs};
+use std::{collections::HashMap};
 use anyhow::Result;
 use itertools::Itertools;
 
 fn part1() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let mut input: (Vec<&str>, Vec<&str>) = input
         .split_terminator('\n')
         .map(|x| x.split_whitespace().collect_tuple::<(&str, &str)>().unwrap())
@@ -22,7 +22,7 @@ fn part1() -> Result<()> {
 }
 
 fn part2() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let input: (Vec<&str>, Vec<&str>) = input
         .split_terminator('\n')
         .map(|x| x.split_whitespace().collect_tuple::<(&str, &str)>().unwrap())

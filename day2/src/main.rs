@@ -1,9 +1,8 @@
-use std::fs;
 use anyhow::Result;
 use itertools::Itertools;
 
 fn part1() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let input = input.split_terminator('\n').map(|x| x.split_whitespace().map(|s| s.parse::<i32>().unwrap()).collect_vec()).collect_vec();
     let res = input.iter().filter(|v| {
         if !v.is_sorted() && !v.iter().rev().is_sorted() { return false };
@@ -54,7 +53,7 @@ fn sorted_and_diffs(v: &Vec<i32>, recursed: bool) -> bool {
 }
 
 fn part2() -> Result<()> {
-    let input = fs::read_to_string("input.txt")?;
+    let input = include_str!("../input.txt");
     let input = input.split_terminator('\n').map(|x| x.split_whitespace().map(|s| s.parse::<i32>().unwrap()).collect_vec()).collect_vec();
     let res = input.iter().filter(|v| {
         sorted_and_diffs(v, false)
